@@ -15,17 +15,17 @@ public class MyScanner {
             try {
                 num = scanner.nextInt();
                 if (num < min || num > max) {
-                    System.out.println("Invalid selection!\nPlease enter a number between " + min + " and " + max);
+                    System.out.println("Invalid selection!\nPlease try again.");
                 } else {
                     break;
                 }
                 // This caught
             } catch (InputMismatchException exception) {
                 scanner.nextLine();
-                System.out.println("Invalid selection!\nPlease enter a number between " + min + " and " + max);
+                System.out.println("Invalid selection!\nPlease try again.");
                 // This didn't catch
             } catch (IndexOutOfBoundsException exception) {
-                System.out.println("Invalid selection!\nPlease enter a number between " + min + " and " + max);
+                System.out.println("Invalid selection!\nPlease try again.");
             }
         }
         return num;
@@ -48,7 +48,7 @@ public class MyScanner {
         while (true) {
             e = scanner.nextLine().toUpperCase();
             if (e == ex) {
-                exit = false;
+                System.exit(99);
             }
             return e;
         }

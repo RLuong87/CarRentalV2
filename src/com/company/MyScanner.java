@@ -42,13 +42,13 @@ public class MyScanner {
         }
     }
 
-    public static String exit(String ex) {
+    public static int exit(int ex) {
 
-        String e;
+        int e;
         while (true) {
-            e = scanner.nextLine().toUpperCase();
+            e = scanner.nextInt();
             if (e == ex) {
-                System.exit(99);
+                exit = false;
             }
             return e;
         }
